@@ -40,4 +40,10 @@ public class JobTest {
         assertEquals(("Persistence"), jobCartoon.getCoreCompetency().getValue());
     }
 
+    @Test
+    public void testJobsForEquality(){
+        Job firstJob = new Job(2,"Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        Job secondJob = new Job(1,"Product tester", new Employer("ACME"), new Location("Desert"), new PositionType("Quality control"), new CoreCompetency("Persistence"));
+        assertNotEquals(firstJob.getId(), secondJob.getId());
+    }
 }
