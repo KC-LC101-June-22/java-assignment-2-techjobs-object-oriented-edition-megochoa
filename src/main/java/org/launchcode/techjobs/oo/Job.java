@@ -17,12 +17,13 @@ public class Job {
     //  other five fields. The second constructor should also call the first in order to initialize
     //  the 'id' field.
     public Job() {
-        id = nextId;
+       // id = nextId;
+        this.id = nextId;
         nextId++;
     }
 
-    public Job(int id, String name, Employer employer, Location location, PositionType positionType, CoreCompetency coreCompetency) {
-        this.id = id;
+    public Job(String name, Employer employer, Location location, PositionType positionType, CoreCompetency coreCompetency) {
+        this();
         this.name = name;
         this.employer = employer;
         this.location = location;
@@ -99,7 +100,7 @@ public class Job {
     }
 
     public String toString(){
-        Job jobs = new Job(id, name, employer, location, positionType, coreCompetency);
+        Job jobs = new Job(name, employer, location, positionType, coreCompetency);
         String noData = "Data not available";
 
         if (jobs.getName() == ""){
